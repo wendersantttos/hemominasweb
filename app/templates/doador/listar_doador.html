@@ -1,0 +1,63 @@
+{% extends 'base.html' %}  <!--herança de template-->
+
+{% block titulo %}
+Lista de doadores
+{% endblock titulo %}
+
+{% block conteudo %}
+
+<style>
+    
+    #listar_doador_h3{
+        font-weight: bold;
+        border-bottom: 1.5px solid #817e7e; 
+        margin-bottom:15px;
+    }
+    #topo{
+        max-width: 900px; 
+        padding: 0; 
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    #listar_doador_a{
+        margin-bottom:5px;
+    }
+
+</style>
+
+<div class="container" id="topo">
+    <h3 class="py-3" id="listar_doador_h3">Lista de Doadores </h3>
+    <a href="{% url 'cadastrar_doador' %}"><input type="button" class="btn btn-primary mb-3" value="Cadastrar novo Doador"></a>
+</div>
+
+
+
+{% for i in doador %}
+
+<div class="container card mb-3" style=" max-width: 900px; font-family:Arial, Helvetica, sans-serif; 
+                                margin-top: 20px; border: 2px solid #414141; 
+                                padding: 10px; border-radius: 8px;
+                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); ">
+    
+
+
+    <div class="card-body" style="padding: 20px;">
+        <h3 class="card-title"> Nome: {{ i.nome }} </h3>
+        <h6 class="card-subtitle"> Endereço: {{ i.endereco }} </h6>
+        <h6 class="card-text" style="margin-top: 7px;"> Cpf: {{ i.cpf }} </h6>
+        <h6 class="card-text"> Telefone: {{ i.telefone }} </h6>
+        <h6 class="card-text"> Data de Nascimento: {{ i.data_nascimento }} </h6>
+        <h6 class="card-text"> Peso: {{ i.peso }} </h6>
+        <h6 class="card-text"> Código  Sanguíneo: {{ i.cod_tiposang }} </h6>
+        <hr>
+        <a href="{% url 'editar_doador' i.id %}"><button type="button" class="btn btn-primary custom-btn">Editar</button></a>
+        <a href="{% url 'excluir_doador' i.id %}"><button type="button" class="btn btn-danger custom-btn">Excluir</button></a>
+    </div>
+</div>
+
+{% endfor %}
+
+<button type="button" class="btn btn-primary justify-content-end" onclick="topFunction()" style="border-radius: 8px; margin-bottom: 20px;">Ir para o Início</button>
+
+
+{% endblock conteudo %}
