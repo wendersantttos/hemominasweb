@@ -34,11 +34,11 @@
                     <button type="button" class="btn btn-light custom-btn">Cadastrar Hospital</button>
                 </a>
             </div>
-            <div class="col-lg-4 mb-4">
+            <!--<div class="col-lg-4 mb-4">
                 <a {% comment %}href="{% url 'solicitar_dispersao' %}" {% endcomment %}>
                     <button type="button" class="btn btn-light custom-btn" disabled = "true">Solicitação de Dispersão</button>
                 </a>
-            </div>
+            </div>-->
             <div class="col-lg-4 mb-4">
                 <a href="{% url 'inserir_doacao' %}">
                     <button type="button" class="btn btn-light custom-btn">Nova Doação</button>
@@ -55,8 +55,8 @@
                 </a>
             </div>
             <div class="col-lg-4 mb-4">
-                <a href="#">
-                    <button type="button" class="btn btn-light custom-btn" disabled = "true">Estoque Sanguíneo</button>
+                <a href="{% url 'listar_tiposangue' %}">
+                    <button type="button" class="btn btn-light custom-btn" >Estoque Sanguíneo</button>
                 </a>
             </div>
         </div>

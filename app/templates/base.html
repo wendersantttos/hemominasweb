@@ -63,7 +63,9 @@
                 <a class="nav-link" href="{% url 'listar_lembretes' %}">Listar Lembretes</a>
                 {% endcomment %}
                 
-                <p class="ml-2 mb-0" id="nomedousuario">Conta do {{ request.user.username}}</p>
+                <p class="ml-2 mb-0" id="nomedousuario">Conta do {{ request.user.first_name|default:request.user.username|default:'Usuário' }}</p>
+
+
                 <a class="button_cadastrar_usuario_logout" href="{% url 'deslogar_usuario' %}">Logout</a>
                 
             {% else %}
@@ -172,6 +174,9 @@
               <li class="nav-item" >
                 <!--Desativado , corrigir implementação -->
                 <!--<a class="nav-link text-uppercase" {% comment %}href="{% url 'solicitar_dispersao' %}" {% endcomment %} ><span class = "desabilitado">Solicitar Dispersão</span></a>-->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="{% url 'listar_tiposangue' %}"><span>Estoque de Sangue</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-uppercase" href="{% url 'inserir_doacao' %}"><span>Nova Doação</span></a>
