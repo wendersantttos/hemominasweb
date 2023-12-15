@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'gerenciador_lembretes.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'doacoes_sangue',
-        'USER': 'root',
-        'PASSWORD': '3570',
-        'HOST': 'localhost',
+        'NAME': 't8ueafze91onzdtw',
+        'USER': 'heqwmzn54m0l1on3',
+        'PASSWORD': 'tw1ydrho15yk74k4',
+        'HOST': 'hwr4wkxs079mtb19.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }

@@ -3,3 +3,4 @@ Django==4.1.10
 sqlparse==0.4.4
 typing-extensions==4.8.0
 gunicorn
+mysqlclient==2.2.1
